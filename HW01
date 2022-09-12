@@ -1,0 +1,53 @@
+/**
+ *  @author Jacob Vuong
+ *  @date September 12, 2022
+ *  @file h01.cpp
+ */
+#include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+string STUDENT = "Jacob Vuong";  // Add your Canvas login name
+extern string ASSIGNMENT;
+
+/**
+ * Converting ints into actual time with colons
+ * @return 0 for success.
+ */
+int run()
+{
+    //1. Title and Introduction
+    int timeHours = 0;
+    int timeMinutes = 0;
+    int durationHours = 0;
+    int durationMinutes = 0;
+    char discard;
+    //2. Input section: prompt and input on same line
+    cout << "    Time: ";
+    cin >> timeHours >> discard >> timeMinutes;
+
+    cout << "     Duration: ";
+    cin >> durationHours >> discard >> durationMinutes;
+
+    //3. Processing section - compute the results
+    int time = timeHours * 60 + timeMinutes;
+    int duration = durationHours * 60 + durationMinutes;
+    int after = time + duration;
+    int before = time - duration;
+    int afterHours = abs(after / (60 + ) % 12 + 1);
+    int afterMinutes = after % 60;
+    int beforeHours = abs(before / (60 + ) % 12 + 1);
+    int beforeMinutes = before % 60;
+    //4. Output section: test data inside brackets []
+    cout << setfill('0');
+    cout << setw(2) << after / 60 << ":" << setw(2) << after % 60;
+    cout << endl;
+    cout << durationHours << ":" << durationMinutes << " hours after, and before, "
+        << timeHours << ":" << timeMinutes << " is [" << afterHours << ":" << afterMinutes << ", "
+        << beforeHours << ":" << beforeMinutes << "]" << endl;
+
+
+
+    return 0;
+}

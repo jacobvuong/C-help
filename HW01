@@ -35,9 +35,9 @@ int run()
     int duration = durationHours * 60 + durationMinutes;
     int after = time + duration;
     int before = time - duration;
-    int afterHours = abs(after / (60 + ) % 12 + 1);
+    int afterHours = abs(after / 1440 + (60 + 1) % 12 + 1);
     int afterMinutes = after % 60;
-    int beforeHours = abs(before / (60 + ) % 12 + 1);
+    int beforeHours = abs(before / 1440 + (60 + 1) % 12 + 1);
     int beforeMinutes = before % 60;
     //4. Output section: test data inside brackets []
     cout << setfill('0');

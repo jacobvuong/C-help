@@ -51,3 +51,56 @@ int run()
 
     return 0;
 }
+
+
+/**
+ *  @author Jacob Vuong
+ *  @date September 12, 2022
+ *  @file h02.cpp
+ */
+#include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+string STUDENT = "Jacob Vuong";  // Add your Canvas login name extern string ASSIGNMENT;
+
+/**
+ * One line describing what this program does.
+ * @return 0 for success.
+ */
+int run()
+{
+    //Given
+    const int weightOfCan = 350;
+    const int artificialSweetener = 0.001;
+    const int poundsToGrams = 454;
+
+    //Input
+    double mouseWeight;
+    cout << "This will be the mouse's weight: " << endl;
+    cin >> mouseWeight;
+
+    double mouseSweetener;
+    cout << "This is the lethal dose: " << endl;
+    cin >> mouseSweetener;
+
+    int desiredWeight;
+    cout << "This is the desired weight of the dieter: " << endl;
+    cin >> desiredWeight;
+
+    //Processing
+    int amountOfPoison = weightOfCan * artificialSweetener;
+    double mouseLethal = mouseSweetener / mouseWeight;
+
+    int humanGrams = desiredWeight * poundsToGrams;
+    int humanLethal = humanGrams * mouseLethal;
+    int humanCans = humanLethal * 2.85714286;
+
+    //Output
+    cout << "Weight of the mouse: " << mouseWeight << endl;
+    cout << "Lethal dose for the mouse: " << mouseSweetener << endl;
+    cout << "Desired weight of the dieter: " << desiredWeight << endl;
+    cout << "Lethal does in grams, cans is " << "[" << humanLethal << ", " << humanCans << "]" <<  endl;
+
+    return 0;
